@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       }
 
     }else{
-      alert("Please fill all the field")
+      alert("Invalid form")
     }
    
   }
