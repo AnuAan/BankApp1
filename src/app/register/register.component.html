@@ -1,7 +1,6 @@
 <nav class="navbar navbar-light bg-dark " >
     <a class="navbar-brand  " href="#" style="color:rgb(85, 98, 237);"><b>&#169; HAFC Bank Pvt.Ltd </b></a>
     <span class="quote text-light">Giving you freedom...</span>
-    <!-- <h5 style="color: white;">{{aim}}</h5> -->
   </nav>
   
   
@@ -23,7 +22,7 @@
                         <input type="text" class="form-control" name="uname" formControlName ="uname" placeholder="User Name" id="login1_accno" required>
                         
                     </div>
-         <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors" style="color: white;">Invalid Username 
+         <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors" style="color: rgb(184, 42, 42);">Invalid Username 
 
                     </div>
 
@@ -34,7 +33,7 @@
                           <input type="text" class="form-control" name="acno" formControlName ="acno" placeholder="Account Number" id="login_accno" required>
                           
                       </div>
-             <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: white;">Invalid AccountNumber </div>
+             <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: rgb(187, 42, 42);">Invalid AccountNumber </div>
 
                       <div class="input-group form-group">
                           <div class="input-group-prepend">
@@ -42,7 +41,7 @@
                           </div>
                           <input type="password" class="form-control" name="pswd" formControlName="pswd"  placeholder="Password" id="login_password" required>
                       </div>
-             <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: white;">Invalid Password </div>
+             <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: rgb(199, 42, 42);">Invalid Password </div>
 
                       <div class="form-group">
                           <input type="submit" value="Login" class="btn float-right login_btn " style="width:50%" >

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -13,14 +14,16 @@ export class LoginComponent implements OnInit {
   acno = ""
   pswd =""
 
-  //databse
-  // db:any = {
-  //   1000: {"accno": 1000, "username":"Anu", "password":1000,"balance":5000},
-  //   1001: {"accno": 1001, "username":"Ammu", "password":1001,"balance":6000},
-  //   1002: {"accno": 1002, "username":"Anju", "password":1002,"balance":7000},
-  // }
+  //form group
 
-  constructor(private router:Router, private ds:DataService) { }
+  loginForm = this.fb.group({
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+  })
+  
+  
+//dependancy inject
+  constructor(private router:Router, private ds:DataService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -39,10 +42,13 @@ pswdChange(event:any){
 
 
   login(){
-    var acno = this.acno;
-    var pswd = this.pswd;
+    // var acno = this.acno;
+    // var pswd = this.pswd;
+    var acno = this.loginForm.value.acno;
+    var pswd = this.loginForm.value.pswd;
+    if(this.loginForm.valid){
+      const result = this.ds.login(acno,pswd)
     
-    const result = this.ds.login(acno,pswd)
     if (result)
     {
       alert("Login successfully")
@@ -50,9 +56,7 @@ pswdChange(event:any){
     }
 
   }
-
-
-
+}
 
 }
  
