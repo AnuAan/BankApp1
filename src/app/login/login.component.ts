@@ -55,8 +55,10 @@ pswdChange(event:any){
       this.router.navigateByUrl('dashboard')
     }
 
-  }
+  }else
+  {
+    alert("Invalid Entry")
 }
 
 }
- 
+}
